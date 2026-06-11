@@ -1,0 +1,21 @@
+# Contexto interno — nunca publicar
+docs/
+evidencias.md
+CLAUDE.md
+CLAUDE*.md.bak
+.claude/
+*.local.md
+# Segredos e credenciais
+sealed-secrets-master-key-backup.yaml
+*kubeconfig*
+*.key
+*.pem
+.env
+.env.*
+# Artefatos locais
+*.bak
+*.tmp
+.idea/
+.vscode/
+Thumbs.db
+desktop.ini
