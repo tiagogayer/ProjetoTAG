@@ -24,4 +24,4 @@ The platform is currently in its design and validation phase; implementation art
 
 Licensed under the [PolyForm Noncommercial License 1.0.0](LICENSE) — noncommercial use only.
 
-Required Notice: Copyright (c) Tiago Arruda Gayer (https://github.com/tiagogayer/ProjetoTAG)
+Required Notice: Copyright (c) Tiago Arruda Gayer (<https://github.com/tiagogayer/ProjetoTAG>)
