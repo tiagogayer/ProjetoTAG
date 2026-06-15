@@ -19,4 +19,4 @@ labels: type:task
 
 ## Documento ou contrato relacionado
 
-<!-- Ex.: docs/cicd.md (P7), ADR-0003. Remova a seção se não houver. -->
+<!-- Ex.: adr/ADR-0003 ou um link relacionado. Remova a seção se não houver. -->
