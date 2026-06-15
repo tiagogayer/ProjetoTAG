@@ -1,5 +1,5 @@
 # pre-commit hooks for the docs CI. The same hooks run locally (`pre-commit install`)
-# and in CI (pre-commit/action), so issues are caught before they reach a PR.
+# and in CI (pre-commit run --all-files), so issues are caught before they reach a PR.
 # Hook versions (rev) are pinned and kept fresh by Dependabot's native "pre-commit"
 # ecosystem — see .github/dependabot.yml. Reference: https://pre-commit.com
 repos:
