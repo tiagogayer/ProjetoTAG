@@ -1,0 +1,16 @@
+# pre-commit hooks for the docs CI. The same hooks run locally (`pre-commit install`)
+# and in CI (pre-commit/action), so issues are caught before they reach a PR.
+# Hook versions (rev) are pinned and kept fresh by Dependabot's native "pre-commit"
+# ecosystem — see .github/dependabot.yml. Reference: https://pre-commit.com
+repos:
+  - repo: https://github.com/adrienverge/yamllint
+    rev: v1.38.0
+    hooks:
+      # Lints every YAML file; reads .yamllint.yml at the repo root automatically.
+      - id: yamllint
+
+  - repo: https://github.com/DavidAnson/markdownlint-cli2
+    rev: v0.22.1
+    hooks:
+      # Lints every Markdown file; reads .markdownlint-cli2.jsonc automatically.
+      - id: markdownlint-cli2

@@ -1,0 +1,9 @@
+{
+  // markdownlint configuration for the docs CI (auto-discovered by markdownlint-cli2).
+  // Rule reference: https://github.com/DavidAnson/markdownlint/blob/main/doc/Rules.md
+  "config": {
+    "default": true,
+    // MD013 (line length) is a style preference for prose and tables, not a defect.
+    "MD013": false
+  }
+}

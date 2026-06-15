@@ -1,0 +1,18 @@
+# yamllint configuration for the docs CI — tuned for GitHub Actions YAML.
+# Reference: https://yamllint.readthedocs.io/en/stable/configuration.html
+extends: default
+
+rules:
+  # GitHub workflows (and most K8s manifests) don't begin with a '---' marker.
+  document-start: disable
+  # Long lines are a style concern here, not a defect — warn, never block.
+  line-length:
+    max: 120
+    level: warning
+  # GitHub Actions uses the bare key 'on:'; don't flag it as a boolean value.
+  truthy:
+    check-keys: false
+    allowed-values: ['true', 'false']
+  # SHA-pin comments use a single space ('uses: x@sha # vX'), as Dependabot writes them.
+  comments:
+    min-spaces-from-content: 1

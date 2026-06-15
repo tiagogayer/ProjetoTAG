@@ -1,0 +1,32 @@
+version: 2
+
+updates:
+  # Keep the SHA-pinned actions in .github/workflows fresh. Pinning an action to a full
+  # commit SHA is immutable for supply-chain security; without Dependabot those pins
+  # would silently freeze on outdated versions.
+  - package-ecosystem: github-actions
+    # '/' tells Dependabot to scan .github/workflows (and a root action.yml, if any).
+    directory: /
+    schedule:
+      interval: weekly
+    commit-message:
+      # Conventional Commits: 'chore' for maintenance. No scope on purpose, to stay
+      # consistent with this project's commit convention.
+      prefix: chore
+    groups:
+      # Bundle all action updates into a single weekly PR (one maintainer: less noise).
+      github-actions:
+        patterns:
+          - "*"
+
+  # Keep the pinned hook versions in .pre-commit-config.yaml fresh (native ecosystem).
+  - package-ecosystem: pre-commit
+    directory: /
+    schedule:
+      interval: weekly
+    commit-message:
+      prefix: chore
+    groups:
+      pre-commit:
+        patterns:
+          - "*"
