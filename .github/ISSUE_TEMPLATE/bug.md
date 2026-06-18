@@ -1,30 +1,30 @@
 ---
 name: Bug
-about: Comportamento incorreto observado em artefato da plataforma.
+about: Incorrect behaviour observed in a platform artifact.
 title: ""
 labels: type:bug
 ---
 
-## O que acontece
+## What happens
 
-<!-- Comportamento observado, com mensagem de erro ou saída quando houver. -->
+<!-- Observed behaviour, with error message or output when available. -->
 
-## O que era esperado
+## What was expected
 
-<!-- Comportamento correto segundo o contrato ou a documentação oficial. -->
+<!-- Correct behaviour according to the contract or official documentation. -->
 
-## Como reproduzir
+## How to reproduce
 
-<!-- Passos mínimos. -->
+<!-- Minimal steps. -->
 
-## Versões
+## Versions
 
-<!-- Versão exata de cada elemento envolvido (ferramenta, chart, imagem). "latest" não identifica versão. -->
+<!-- Exact version of each element involved (tool, chart, image). "latest" does not identify a version. -->
 
-## Onde
+## Where
 
-<!-- Componente/área afetada (ex.: ci, cluster, observability) e arquivo, se aplicável. -->
+<!-- Affected component/area (e.g.: ci, cluster, observability) and file, if applicable. -->
 
-## Contexto adicional
+## Additional context
 
-<!-- Opcional: logs, saídas e qualquer outra pista. Repo público — remova segredos e dados sensíveis antes de colar. -->
+<!-- Optional: logs, outputs and any other clue. Public repo — remove secrets and sensitive data before pasting. -->
