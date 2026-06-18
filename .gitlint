@@ -1,0 +1,36 @@
+# gitlint — lints commit messages against this project's commit convention.
+# Runs in CI: the "Commit messages" job in .github/workflows/docs.yml lints every
+# commit in a pull request, before merge. No local setup is needed — a bad message
+# is reported by the PR check.
+# Reference: https://jorisroovers.com/gitlint
+#
+# Convention enforced: `<type>(<scope>): <description> (#<issue>)`
+#   - type: one of the allowed set below
+#   - scope: optional (the area of the project)
+#   - description: short, imperative
+#   - the subject ends with the issue number, e.g. "(#42)"
+#   - a body is required (gitlint's default body check stays on): leave a blank
+#     line after the subject and explain what/why — not how.
+
+[general]
+# Conventional Commits checking lives in a contrib rule — enable it explicitly.
+contrib=contrib-title-conventional-commits
+# Auto-generated messages (merge/revert/fixup/squash) have their own shape — don't lint them.
+ignore-merge-commits=true
+ignore-revert-commits=true
+ignore-fixup-commits=true
+ignore-squash-commits=true
+
+# Allowed commit types (the project's set).
+[contrib-title-conventional-commits]
+types=feat,fix,docs,chore,ci,refactor
+
+# Keep the subject short and scannable.
+[title-max-length]
+line-length=72
+
+# The subject must end with the issue number: "... (#123)".
+# (Type/scope are validated by the conventional-commits rule above; this rule
+# only enforces the trailing issue reference that ties the commit to its work item.)
+[title-match-regex]
+regex=\(#\d+\)$

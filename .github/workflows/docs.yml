@@ -41,3 +41,25 @@ jobs:
         # Default args check ./**/*.md|html|rst; fail=true breaks the job on broken
         # links; the default github.token avoids GitHub rate limiting.
         uses: lycheeverse/lychee-action@8646ba30535128ac92d33dfc9133794bfdd9b411 # v2.8.0
+
+  commits:
+    name: Commit messages
+    # Lint commit messages on the pull request, before merge. Direct pushes to main are
+    # blocked by the ruleset, so the PR is where messages are validated — no local setup.
+    if: github.event_name == 'pull_request'
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@df4cb1c069e1874edd31b4311f1884172cec0e10 # v6.0.3
+        with:
+          # Full history so gitlint can read every commit in the pull request range.
+          fetch-depth: 0
+      - name: Set up Python
+        uses: actions/setup-python@a309ff8b426b58ec0e2a45f0f869d46889d02405 # v6.2.0
+        with:
+          python-version: '3.11'
+      - name: Install gitlint
+        run: pip install gitlint==0.19.1
+      - name: Lint commit messages
+        # Lint every commit in the pull request (reads .gitlint at the repo root).
+        run: gitlint --commits "${{ github.event.pull_request.base.sha }}..${{ github.event.pull_request.head.sha }}"

@@ -1,7 +1,8 @@
-# pre-commit hooks for the docs CI. The same hooks run locally (`pre-commit install`)
-# and in CI (pre-commit run --all-files), so issues are caught before they reach a PR.
+# pre-commit config used by the docs CI to lint Markdown and YAML
+# (`pre-commit run --all-files`). Validation runs in CI — no local setup is needed.
 # Hook versions (rev) are pinned and kept fresh by Dependabot's native "pre-commit"
 # ecosystem — see .github/dependabot.yml. Reference: https://pre-commit.com
+
 repos:
   - repo: https://github.com/adrienverge/yamllint
     rev: v1.38.0
