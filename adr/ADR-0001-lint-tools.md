@@ -34,5 +34,7 @@ to GitHub Actions is shallow — each action is a replaceable shell over the act
 
 - Hook versions are tracked automatically by Dependabot's native `pre-commit` ecosystem support,
   leaving no orphaned pins.
-- The same lint runs locally (`pre-commit run`) and in CI with no extra configuration (shift-left).
+- The same `.pre-commit-config.yaml` can be run locally (`pre-commit run`) as an optional
+  developer convenience, but the validation that gates merges runs in CI — local execution is not
+  part of the model (see [ADR-0008](ADR-0008-validation-in-ci.md)).
 - The shallow, reversible coupling keeps the CI provider easy to change later.

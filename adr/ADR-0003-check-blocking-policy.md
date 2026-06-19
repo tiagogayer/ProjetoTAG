@@ -9,7 +9,10 @@ quality without ever blocking a critical fix — documentation can wait; a produ
 
 ## Decision
 
-- Lint and link-check status checks are **required** for merging into `main`.
+- The `docs` workflow's active validation jobs are **required** for merging into `main` —
+  currently lint, link-check, and commit-message linting (see
+  [ADR-0006](ADR-0006-commit-message-enforcement.md) and
+  [ADR-0008](ADR-0008-validation-in-ci.md)).
 - They are **not required on the working branch** — a push to a work branch never blocks; only
   the merge to `main` is gated.
 - The repository admin bypass is **enabled**, so a critical fix can always be merged without

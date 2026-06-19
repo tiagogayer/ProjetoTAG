@@ -20,9 +20,10 @@ pinned in the workflow.
 
 ## Rejected alternatives
 
-- **commitlint** — more capable on rules, but it is built for a Husky (Node) `commit-msg` hook and
-  is not designed to run under the pre-commit framework; it would add a separate Node toolchain,
-  and the issue-number suffix would still need a custom pattern.
+- **commitlint** — more capable on rules, but the issue-number suffix would still need a custom
+  pattern and it brings the Node ecosystem with no gain over the requirements; gitlint covers the
+  type, subject length, body and the `(#<issue>)` suffix natively, in Python (MIT) — a lighter fit,
+  not an unsuitable tool.
 - **conventional-pre-commit** — a lighter checker, but it validates neither subject length nor the
   issue-number suffix, leaving two requirements unenforced.
 - **commitizen / cocogitto** — release-management toolboxes; far broader than message linting.
@@ -32,5 +33,9 @@ pinned in the workflow.
 - The whole gate is in CI: you commit and push, and the pull request reports any bad message.
   Fixing a message means amending the commit (not just adding another file).
 - No local toolchain is required to contribute.
+- The gate validates the PR's commits; with the default rebase merge they are preserved on `main`,
+  but a **squash** merge (the noisy-branch exception, see
+  [ADR-0004](ADR-0004-branch-strategy.md)) produces a new commit whose message is composed at merge
+  time and is not covered by the check — the author must keep it convention-compliant.
 - The gitlint version is pinned in the workflow (outside Dependabot's pre-commit ecosystem), so it
   is bumped manually — cheap, given gitlint's low release cadence.
