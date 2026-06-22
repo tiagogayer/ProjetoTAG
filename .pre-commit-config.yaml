@@ -1,7 +1,4 @@
-# pre-commit config used by the docs CI to lint Markdown and YAML
-# (`pre-commit run --all-files`). Validation runs in CI — no local setup is needed.
-# Hook versions (rev) are pinned and kept fresh by Dependabot's native "pre-commit"
-# ecosystem — see .github/dependabot.yml. Reference: https://pre-commit.com
+# Hooks: yamllint for all YAML files, markdownlint-cli2 for adr/ only.
 
 repos:
   - repo: https://github.com/adrienverge/yamllint
@@ -13,5 +10,6 @@ repos:
   - repo: https://github.com/DavidAnson/markdownlint-cli2
     rev: v0.22.1
     hooks:
-      # Lints every Markdown file; reads .markdownlint-cli2.jsonc automatically.
+      # Lints Markdown files under adr/ only; reads .markdownlint-cli2.jsonc automatically.
       - id: markdownlint-cli2
+        files: ^adr/.*\.md$
