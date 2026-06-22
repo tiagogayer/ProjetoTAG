@@ -1,10 +1,7 @@
 name: docs
 
-# Validate the repository's documentation and configuration on every change to main.
-# First CI workflow for this repository. Markdown and YAML linting run
-# through pre-commit, so the same checks run locally (git hook) and in CI, and their
-# versions are pinned in .pre-commit-config.yaml and tracked by Dependabot. Each job
-# is a distinct status check, selectable in the branch ruleset later.
+# Lints Markdown and YAML (pre-commit), checks links (lychee), and validates commit
+# messages (gitlint). Commit linting runs on pull requests only.
 on:
   push:
     branches: [main]
