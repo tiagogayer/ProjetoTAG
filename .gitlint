@@ -34,3 +34,7 @@ line-length=72
 # only enforces the trailing issue reference that ties the commit to its work item.)
 [title-match-regex]
 regex=\(#\d+\)$
+
+# Dependabot's auto-generated messages have their own shape (long URLs, no issue ref) — skip them; anchored so only dependabot[bot] matches.
+[ignore-by-author-name]
+regex=^dependabot\[bot\]$
