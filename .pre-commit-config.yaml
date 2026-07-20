@@ -8,7 +8,7 @@ repos:
       - id: yamllint
 
   - repo: https://github.com/DavidAnson/markdownlint-cli2
-    rev: v0.23.0
+    rev: v0.23.1
     hooks:
       # Lints Markdown files under adr/ only; reads .markdownlint-cli2.jsonc automatically.
       - id: markdownlint-cli2
